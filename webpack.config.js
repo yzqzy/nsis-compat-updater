@@ -1,32 +1,27 @@
-const { dirname, resolve } = require('path')
-
-const { dependencies } = require('./package.json')
-
-const externals = {}
-Object.keys(dependencies || {}).map(dependency => {
-  externals[dependency] = `commonjs2 ${dependency}`
-})
+const { resolve } = require('path')
 
 module.exports = {
+  mode: 'production',
   entry: ['./src/lib/index.ts'],
-  devtool: 'nosources-source-map',
-  target: 'electron-renderer',
   output: {
-    libraryTarget: 'commonjs2',
-    path: resolve(dirname(module.filename), './dist/'),
+    path: resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  devtool: 'nosources-source-map',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        loader: 'awesome-typescript-loader'
+        use: 'ts-loader'
       }
     ]
   },
-  externals
+  externals: {
+    child_process: 'commonjs child_process',
+    fs: 'commonjs fs'
+  }
 }

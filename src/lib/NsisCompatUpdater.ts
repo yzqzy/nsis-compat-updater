@@ -1,12 +1,5 @@
 import { resolve as urlResolve } from 'url'
-import {
-  lstat,
-  readFile,
-  createReadStream,
-  createWriteStream,
-  Stats,
-  ReadStream
-} from 'fs'
+import { createReadStream, createWriteStream } from 'fs'
 import { IncomingMessage } from 'http'
 import { createHash } from 'crypto'
 import { spawn } from 'child_process'

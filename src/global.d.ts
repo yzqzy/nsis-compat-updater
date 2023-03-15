@@ -1,2 +1,1 @@
-
-declare const nw: any;
+declare const nw: any

@@ -1,23 +1,22 @@
 {
-  "name": "nsis-compat-updater",
-  "version": "1.2.0",
+  "name": "nw-nsis-compat-updater",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/bundle.js",
   "scripts": {
     "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evshiron/nwjs-builder-phoenix.git"
+    "url": "git@github.com:yzqzy/nw-nsis-compat-updater.git"
   },
-  "author": "evshiron",
+  "author": "heora",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evshiron/nwjs-builder-phoenix/issues"
+    "url": "https://github.com/yzqzy/nw-nsis-compat-updater/issues"
   },
-  "homepage": "https://github.com/evshiron/nwjs-builder-phoenix#readme",
+  "homepage": "https://github.com/yzqzy/nw-nsis-compat-updater#readme",
   "devDependencies": {
     "@types/bluebird-global": "^3.5.1",
     "@types/node": "^7.0.12",

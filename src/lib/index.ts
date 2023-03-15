@@ -1,2 +1,1 @@
-
-export * from './NsisCompatUpdater';
+export * from './NsisCompatUpdater'

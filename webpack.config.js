@@ -1,11 +1,13 @@
-const { resolve } = require('path')
+const path = require('path')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: ['./src/lib/index.ts'],
+  target: 'node-webkit',
   output: {
-    path: resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, 'dist')
   },
   devtool: 'nosources-source-map',
   resolve: {
@@ -21,7 +23,8 @@ module.exports = {
     ]
   },
   externals: {
-    child_process: 'commonjs child_process',
-    fs: 'commonjs fs'
+    fs: 'commonjs fs',
+    os: 'commonjs os',
+    child_process: 'commonjs child_process'
   }
 }
